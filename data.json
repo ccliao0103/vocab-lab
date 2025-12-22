@@ -1,0 +1,689 @@
+[
+  {
+    "term": "Stoichiometry",
+    "translation": "化學計量 (學)",
+    "definition": "The calculation of reactants and products in chemical reactions.",
+    "category": "Chemistry",
+    "example": "Stoichiometry is crucial for determining the theoretical yield."
+  },
+  {
+    "term": "Enthalpy",
+    "translation": "焓",
+    "definition": "A thermodynamic quantity equivalent to the total heat content of a system.",
+    "category": "Chemistry",
+    "example": "The change in enthalpy is positive for endothermic reactions."
+  },
+  {
+    "term": "Entropy",
+    "translation": "熵",
+    "definition": "A measure of the disorder or randomness in a closed system.",
+    "category": "Chemistry",
+    "example": "According to the Second Law of Thermodynamics, the total entropy of an isolated system always increases."
+  },
+  {
+    "term": "Titration",
+    "translation": "滴定",
+    "definition": "A technique where a solution of known concentration is used to determine the concentration of an unknown solution.",
+    "category": "Chemistry",
+    "example": "Acid-base titration is commonly used to find the pH of a solution."
+  },
+  {
+    "term": "Catalyst",
+    "translation": "催化劑",
+    "definition": "A substance that increases the rate of a chemical reaction without itself undergoing any permanent chemical change.",
+    "category": "Chemistry",
+    "example": "Enzymes act as biological catalysts in the human body."
+  },
+  {
+    "term": "Chromatography",
+    "translation": "層析法",
+    "definition": "A process for separating components of a mixture.",
+    "category": "Chemistry",
+    "example": "Gas chromatography is used to test the purity of a particular substance."
+  },
+  {
+    "term": "Ligand",
+    "translation": "配位基",
+    "definition": "an ion or molecule that binds to a central metal atom to form a coordination complex.",
+    "category": "Chemistry",
+    "example": "In hemoglobin, oxygen acts as a ligand for the iron atom."
+  },
+  {
+    "term": "Isomer",
+    "translation": "同分異構物",
+    "definition": "Compounds with the same formula but a different arrangement of atoms.",
+    "category": "Chemistry",
+    "example": "Glucose and fructose are structural isomers."
+  },
+  {
+    "term": "Electrolysis",
+    "translation": "電解",
+    "definition": "Chemical decomposition produced by passing an electric current through a liquid or solution.",
+    "category": "Chemistry",
+    "example": "Electrolysis is used to extract aluminum from its ore."
+  },
+  {
+    "term": "Activation Energy",
+    "translation": "活化能",
+    "definition": "The minimum quantity of energy that the reacting species must possess in order to undergo a specified reaction.",
+    "category": "Chemistry",
+    "example": "Catalysts work by lowering the activation energy of a reaction."
+  },
+  {
+    "term": "Buffer Solution",
+    "translation": "緩衝溶液",
+    "definition": "A solution that resists changes in pH when acid or alkali is added to it.",
+    "category": "Chemistry",
+    "example": "Blood is a natural buffer solution that maintains a stable pH."
+  },
+  {
+    "term": "Precipitation",
+    "translation": "沉澱",
+    "definition": "The process of transforming a dissolved substance into an insoluble solid.",
+    "category": "Chemistry",
+    "example": "Mixing silver nitrate and sodium chloride results in the precipitation of silver chloride."
+  },
+  {
+    "term": "Redox Reaction",
+    "translation": "氧化還原反應",
+    "definition": "A type of chemical reaction that involves a transfer of electrons between two species.",
+    "category": "Chemistry",
+    "example": "Rusting of iron is a common example of a redox reaction."
+  },
+  {
+    "term": "Orbital",
+    "translation": "軌域",
+    "definition": "A mathematical function describing the wave-like behavior of an electron in an atom.",
+    "category": "Chemistry",
+    "example": "The p-orbital has a dumbbell shape."
+  },
+  {
+    "term": "Viscosity",
+    "translation": "黏度",
+    "definition": "A measure of a fluid's resistance to flow.",
+    "category": "Chemical Engineering",
+    "example": "Heavy crude oil has a much higher viscosity than water."
+  },
+  {
+    "term": "Reynolds Number",
+    "translation": "雷諾數",
+    "definition": "A dimensionless quantity used to predict flow patterns in different fluid flow situations.",
+    "category": "Chemical Engineering",
+    "example": "A high Reynolds number indicates turbulent flow."
+  },
+  {
+    "term": "Distillation",
+    "translation": "蒸餾",
+    "definition": "The action of purifying a liquid by a process of heating and cooling.",
+    "category": "Chemical Engineering",
+    "example": "Fractional distillation is used to separate crude oil into useful products."
+  },
+  {
+    "term": "Heat Exchanger",
+    "translation": "熱交換器",
+    "definition": "A device used to transfer heat between two or more fluids.",
+    "category": "Chemical Engineering",
+    "example": "Shell and tube heat exchangers are widely used in chemical plants."
+  },
+  {
+    "term": "Fluidized Bed",
+    "translation": "流體化床",
+    "definition": "A physical phenomenon occurring when a quantity of solid particulate substance is placed under appropriate conditions to cause a solid/fluid mixture to behave as a fluid.",
+    "category": "Chemical Engineering",
+    "example": "Fluidized bed reactors allow for better mixing and heat transfer."
+  },
+  {
+    "term": "Mass Balance",
+    "translation": "質量平衡",
+    "definition": "An application of conservation of mass to the analysis of physical systems.",
+    "category": "Chemical Engineering",
+    "example": "Performing a mass balance is the first step in designing a chemical process."
+  },
+  {
+    "term": "Azeotrope",
+    "translation": "共沸物",
+    "definition": "A mixture of liquids that maintains its composition and boiling point during distillation.",
+    "category": "Chemical Engineering",
+    "example": "Ethanol and water form an azeotrope at 95.6% ethanol."
+  },
+  {
+    "term": "CSTR",
+    "translation": "連續攪拌槽反應器",
+    "definition": "Continuous Stirred-Tank Reactor; a common model for a chemical reactor in chemical engineering.",
+    "category": "Chemical Engineering",
+    "example": "Ideally, the output composition from a CSTR is identical to the composition inside the reactor."
+  },
+  {
+    "term": "Reflux",
+    "translation": "回流",
+    "definition": "The technique involving the condensation of vapors and the return of this condensate to the system from which it originated.",
+    "category": "Chemical Engineering",
+    "example": "Increasing the reflux ratio improves the separation purity in a distillation column."
+  },
+  {
+    "term": "Fugacity",
+    "translation": "逸度",
+    "definition": "An effective pressure which replaces the true mechanical pressure in accurate chemical equilibrium calculations.",
+    "category": "Chemical Engineering",
+    "example": "Fugacity coefficients are used to correct for non-ideal gas behavior."
+  },
+  {
+    "term": "Adiabatic",
+    "translation": "絕熱的",
+    "definition": "Relating to a process or condition in which heat does not enter or leave the system.",
+    "category": "Chemical Engineering",
+    "example": "In an adiabatic expansion, the gas does work at the expense of its internal energy."
+  },
+  {
+    "term": "P&ID",
+    "translation": "管線儀表圖",
+    "definition": "Piping and Instrumentation Diagram; a detailed diagram in the process industry which shows the piping and process equipment together with the instrumentation and control devices.",
+    "category": "Chemical Engineering",
+    "example": "Engineers refer to the P&ID to understand the control logic of the plant."
+  },
+  {
+    "term": "Annealing",
+    "translation": "退火",
+    "definition": "A heat treatment process that alters the physical and sometimes chemical properties of a material to increase its ductility and reduce its hardness.",
+    "category": "Materials Science",
+    "example": "Annealing the metal helps to relieve internal stresses."
+  },
+  {
+    "term": "Sintering",
+    "translation": "燒結",
+    "definition": "The process of compacting and forming a solid mass of material by heat or pressure without melting it to the point of liquefaction.",
+    "category": "Materials Science",
+    "example": "Sintering is a key step in powder metallurgy."
+  },
+  {
+    "term": "Tensile Strength",
+    "translation": "抗拉強度",
+    "definition": "The resistance of a material to breaking under tension.",
+    "category": "Materials Science",
+    "example": "Carbon fiber has an extremely high tensile strength."
+  },
+  {
+    "term": "Ductility",
+    "translation": "延展性",
+    "definition": "A solid material's ability to deform under tensile stress.",
+    "category": "Materials Science",
+    "example": "Copper is known for its high ductility, making it ideal for wires."
+  },
+  {
+    "term": "Polymerization",
+    "translation": "聚合反應",
+    "definition": "A process of reacting monomer molecules together in a chemical reaction to form polymer chains.",
+    "category": "Materials Science",
+    "example": "Addition polymerization is used to create polyethylene."
+  },
+  {
+    "term": "Crystal Lattice",
+    "translation": "晶格",
+    "definition": "The symmetrical three-dimensional arrangement of atoms inside a crystal.",
+    "category": "Materials Science",
+    "example": "Salt (NaCl) forms a face-centered cubic crystal lattice."
+  },
+  {
+    "term": "Dislocation",
+    "translation": "差排",
+    "definition": "A crystallographic defect or irregularity within a crystal structure.",
+    "category": "Materials Science",
+    "example": "The movement of dislocations is the primary mechanism of plastic deformation."
+  },
+  {
+    "term": "Young's Modulus",
+    "translation": "楊氏模數",
+    "definition": "A mechanical property that measures the stiffness of a solid material.",
+    "category": "Materials Science",
+    "example": "Steel has a higher Young's modulus than aluminum, meaning it is stiffer."
+  },
+  {
+    "term": "Corrosion",
+    "translation": "腐蝕",
+    "definition": "A natural process that converts a refined metal into a more chemically stable form such as oxide.",
+    "category": "Materials Science",
+    "example": "Galvanization helps prevent the corrosion of steel."
+  },
+  {
+    "term": "Composite Material",
+    "translation": "複合材料",
+    "definition": "A material made from two or more constituent materials with significantly different physical or chemical properties.",
+    "category": "Materials Science",
+    "example": "Reinforced concrete is a common composite material."
+  },
+  {
+    "term": "Fatigue",
+    "translation": "疲勞",
+    "definition": "The weakening of a material caused by cyclic loading that results in progressive and localized structural damage.",
+    "category": "Materials Science",
+    "example": "Metal fatigue was the cause of the airplane wing failure."
+  },
+  {
+    "term": "Phase Diagram",
+    "translation": "相圖",
+    "definition": "A chart used to show conditions (pressure, temperature, volume, etc.) at which thermodynamically distinct phases occur and coexist at equilibrium.",
+    "category": "Materials Science",
+    "example": "The iron-carbon phase diagram is essential for steel manufacturing."
+  },
+  {
+    "term": "Semiconductor",
+    "translation": "半導體",
+    "definition": "A material that has an electrical conductivity value falling between that of a conductor and an insulator.",
+    "category": "Materials Science",
+    "example": "Silicon is the most widely used semiconductor in electronics."
+  },
+  {
+    "term": "Nanotechnology",
+    "translation": "奈米科技",
+    "definition": "The branch of technology that deals with dimensions and tolerances of less than 100 nanometers.",
+    "category": "Materials Science",
+    "example": "Nanotechnology is enabling the development of new drug delivery systems."
+  },
+  {
+    "term": "Yield Strength",
+    "translation": "降伏強度",
+    "definition": "The stress at which a specific amount of plastic deformation is produced.",
+    "category": "Materials Science",
+    "example": "Engineers must design structures so that loads remain below the yield strength."
+  },
+  {
+    "term": "Sublimation",
+    "translation": "昇華",
+    "definition": "The transition of a substance directly from the solid to the gas state.",
+    "category": "Chemistry",
+    "example": "Dry ice undergoes sublimation at room temperature."
+  },
+  {
+    "term": "Molarity",
+    "translation": "體積莫耳濃度",
+    "definition": "The amount of a substance in a certain volume of solution.",
+    "category": "Chemistry",
+    "example": "The molarity of the acid solution was 0.5 M."
+  },
+  {
+    "term": "Turbidity",
+    "translation": "濁度",
+    "definition": "The measure of relative clarity of a liquid.",
+    "category": "Chemical Engineering",
+    "example": "Water treatment plants monitor turbidity to ensure water quality."
+  },
+  {
+    "term": "Quenching",
+    "translation": "淬火",
+    "definition": "The rapid cooling of a workpiece in water, oil or air to obtain certain material properties.",
+    "category": "Materials Science",
+    "example": "Quenching steel makes it harder but more brittle."
+  },
+  {
+    "term": "Spectroscopy",
+    "translation": "光譜學",
+    "definition": "The study of the interaction between matter and electromagnetic radiation.",
+    "category": "Chemistry",
+    "example": "NMR spectroscopy is used to determine the structure of organic molecules."
+  },
+  {
+    "term": "Unit Operation",
+    "translation": "單元操作",
+    "definition": "A basic step in a process.",
+    "category": "Chemical Engineering",
+    "example": "Distillation, drying, and filtration are examples of unit operations."
+  },
+  {
+    "term": "Elastomer",
+    "translation": "彈性體",
+    "definition": "A polymer with viscoelasticity (having both viscosity and elasticity).",
+    "category": "Materials Science",
+    "example": "Natural rubber is a common elastomer."
+  },
+    {
+    "term": "Kinetics",
+    "translation": "動力學",
+    "definition": "The study of the rates of chemical reactions and the factors affecting them.",
+    "category": "Chemistry",
+    "example": "Chemical kinetics helps determine how fast a drug decomposes."
+  },
+  {
+    "term": "Adsorption",
+    "translation": "吸附",
+    "definition": "The adhesion of atoms, ions or molecules from a gas, liquid or dissolved solid to a surface.",
+    "category": "Chemical Engineering",
+    "example": "Activated carbon is used for adsorption of impurities in water."
+  },
+  {
+    "term": "Absorption",
+    "translation": "吸收",
+    "definition": "A physical or chemical phenomenon or a process in which atoms, molecules or ions enter some bulk phase.",
+    "category": "Chemical Engineering",
+    "example": "Gas absorption is used to remove sulfur dioxide from flue gases."
+  },
+  {
+    "term": "Chirality",
+    "translation": "手性",
+    "definition": "A geometric property of some molecules and ions where they are non-superimposable on their mirror image.",
+    "category": "Chemistry",
+    "example": "Chirality is extremely important in the design of pharmaceutical drugs."
+  },
+  {
+    "term": "Creep",
+    "translation": "潛變 / 蠕變",
+    "definition": "The tendency of a solid material to move slowly or deform permanently under the influence of mechanical stresses.",
+    "category": "Materials Science",
+    "example": "Turbine blades must resist creep at high temperatures."
+  },
+  {
+    "term": "Thermoplastic",
+    "translation": "熱塑性塑膠",
+    "definition": "A plastic polymer material that becomes pliable or moldable at a certain elevated temperature and solidifies upon cooling.",
+    "category": "Materials Science",
+    "example": "PVC and nylon are common examples of thermoplastics."
+  },
+  {
+    "term": "Thermoset",
+    "translation": "熱固性塑膠",
+    "definition": "A polymer that is irreversibly cured from a soft solid or viscous liquid prepolymer or resin.",
+    "category": "Materials Science",
+    "example": "Epoxy resin is a thermoset widely used in adhesives."
+  },
+  {
+    "term": "Colloid",
+    "translation": "膠體",
+    "definition": "A mixture in which one substance of microscopically dispersed insoluble particles is suspended throughout another substance.",
+    "category": "Chemistry",
+    "example": "Milk is a colloid of butterfat globules dispersed in water."
+  },
+  {
+    "term": "Surfactant",
+    "translation": "表面活性劑",
+    "definition": "A substance that tends to reduce the surface tension of a liquid in which it is dissolved.",
+    "category": "Chemistry",
+    "example": "Detergents contain surfactants to help wash away grease."
+  },
+  {
+    "term": "Cavitation",
+    "translation": "空蝕現象",
+    "definition": "The formation of vapour cavities in a liquid that are the consequence of forces acting upon the liquid.",
+    "category": "Chemical Engineering",
+    "example": "Cavitation can cause significant damage to pump impellers."
+  },
+  {
+    "term": "Allotrope",
+    "translation": "同素異形體",
+    "definition": "Each of two or more different physical forms in which an element can exist.",
+    "category": "Chemistry",
+    "example": "Diamond and graphite are allotropes of carbon."
+  },
+  {
+    "term": "Ceramic",
+    "translation": "陶瓷",
+    "definition": "An inorganic, non-metallic, often crystalline oxide, nitride or carbide material.",
+    "category": "Materials Science",
+    "example": "Ceramics are used in high-temperature applications due to their heat resistance."
+  },
+  {
+    "term": "Filtration",
+    "translation": "過濾",
+    "definition": "A physical separation process that separates solid matter and fluid from a mixture using a filter medium.",
+    "category": "Chemical Engineering",
+    "example": "Membrane filtration is essential in wastewater treatment."
+  },
+  {
+    "term": "Batch Reactor",
+    "translation": "批式反應器",
+    "definition": "A vessel in which a chemical reaction occurs in a batch process rather than a continuous one.",
+    "category": "Chemical Engineering",
+    "example": "Pharmaceuticals are often produced in batch reactors to ensure quality control."
+  },
+  {
+    "term": "Electronegativity",
+    "translation": "電負度",
+    "definition": "A measure of the tendency of an atom to attract a bonding pair of electrons.",
+    "category": "Chemistry",
+    "example": "Fluorine has the highest electronegativity of all elements."
+  },
+  {
+    "term": "Nucleophile",
+    "translation": "親核試劑",
+    "definition": "A chemical species that donates an electron pair to form a chemical bond in relation to a reaction.",
+    "category": "Chemistry",
+    "example": "Hydroxide ion is a strong nucleophile."
+  },
+  {
+    "term": "Hardness",
+    "translation": "硬度",
+    "definition": "A measure of the resistance to localized plastic deformation induced by either mechanical indentation or abrasion.",
+    "category": "Materials Science",
+    "example": "The Mohs scale is used to measure the hardness of minerals."
+  },
+  {
+    "term": "Toughness",
+    "translation": "韌性",
+    "definition": "The ability of a material to absorb energy and plastically deform without fracturing.",
+    "category": "Materials Science",
+    "example": "Steel usually has high toughness compared to glass."
+  },
+  {
+    "term": "Latent Heat",
+    "translation": "潛熱",
+    "definition": "Energy released or absorbed, by a body or a thermodynamic system, during a constant-temperature process.",
+    "category": "Chemical Engineering",
+    "example": "Latent heat of vaporization is required to boil water into steam."
+  },
+  {
+    "term": "Grain Boundary",
+    "translation": "晶界",
+    "definition": "The interface between two grains, or crystallites, in a polycrystalline material.",
+    "category": "Materials Science",
+    "example": "Grain boundaries can impede the movement of dislocations, strengthening the material."
+  },
+  {
+    "term": "Hybridization",
+    "translation": "混成軌域",
+    "definition": "The concept of mixing atomic orbitals into new hybrid orbitals suitable for the pairing of electrons.",
+    "category": "Chemistry",
+    "example": "The carbon atoms in methane utilize sp3 hybridization."
+  },
+  {
+    "term": "Superconductor",
+    "translation": "超導體",
+    "definition": "A material that can conduct electricity with zero resistance below a certain critical temperature.",
+    "category": "Materials Science",
+    "example": "Superconductors are used in MRI machines for strong magnetic fields."
+  },
+  {
+    "term": "Hydrolysis",
+    "translation": "水解",
+    "definition": "The chemical breakdown of a compound due to reaction with water.",
+    "category": "Chemistry",
+    "example": "Hydrolysis of esters yields an acid and an alcohol."
+  },
+  {
+    "term": "Isotropic",
+    "translation": "各向同性",
+    "definition": "Having physical properties that have the same value when measured in different directions.",
+    "category": "Materials Science",
+    "example": "Glass is an isotropic material, unlike wood."
+  },
+  {
+    "term": "Anisotropic",
+    "translation": "各向異性",
+    "definition": "Having a physical property that has a different value when measured in different directions.",
+    "category": "Materials Science",
+    "example": "Wood is anisotropic; it is stronger along the grain."
+  },
+  {
+    "term": "Scrubber",
+    "translation": "洗滌塔",
+    "definition": "An apparatus for cleaning gases, removing impurities by spraying them with a liquid.",
+    "category": "Chemical Engineering",
+    "example": "Wet scrubbers are used to control air pollution."
+  },
+  {
+    "term": "Amorphous",
+    "translation": "非晶質 / 無定形",
+    "definition": "Lacking a clear structure or form; not crystalline.",
+    "category": "Materials Science",
+    "example": "Amorphous silicon is often used in solar cells."
+  },
+  {
+    "term": "Solubility",
+    "translation": "溶解度",
+    "definition": "The ability of a substance, the solute, to form a solution with another substance, the solvent.",
+    "category": "Chemistry",
+    "example": "Temperature often affects the solubility of salts in water."
+  },
+  {
+    "term": "Thermal Conductivity",
+    "translation": "熱導率",
+    "definition": "A measure of the ability of a material to conduct heat.",
+    "category": "Chemical Engineering",
+    "example": "Copper has high thermal conductivity, making it good for cookware."
+  },
+  {
+    "term": "Vulcanization",
+    "translation": "硫化",
+    "definition": "A chemical process for converting natural rubber or related polymers into more durable materials.",
+    "category": "Materials Science",
+    "example": "Charles Goodyear invented the vulcanization of rubber."
+  },
+  {
+    "term": "Piezoelectricity",
+    "translation": "壓電效應",
+    "definition": "Electric charge that accumulates in certain solid materials in response to applied mechanical stress.",
+    "category": "Materials Science",
+    "example": "Piezoelectricity is the operating principle of quartz watches."
+  },
+  {
+    "term": "Vapor Pressure",
+    "translation": "蒸氣壓",
+    "definition": "The pressure exerted by a vapor in thermodynamic equilibrium with its condensed phases.",
+    "category": "Chemistry",
+    "example": "Liquids with high vapor pressure are volatile."
+  },
+  {
+    "term": "Pilot Plant",
+    "translation": "試驗工廠",
+    "definition": "A small processing system operated to generate information about the behavior of the system for use in design of larger facilities.",
+    "category": "Chemical Engineering",
+    "example": "We tested the new process in a pilot plant before full-scale production."
+  },
+  {
+    "term": "Biomaterial",
+    "translation": "生物材料",
+    "definition": "A natural or synthetic material that is suitable for use in artificial limbs or organs.",
+    "category": "Materials Science",
+    "example": "Titanium is a common biomaterial for hip replacements."
+  },
+  {
+    "term": "Packed Bed",
+    "translation": "填充床",
+    "definition": "A hollow tube, pipe, or other vessel that is filled with a packing material.",
+    "category": "Chemical Engineering",
+    "example": "Packed bed reactors are used to increase surface area for catalytic reactions."
+  },
+  {
+    "term": "Calorimetry",
+    "translation": "熱量測定法",
+    "definition": "The science or act of measuring changes in state variables of a body for the purpose of deriving the heat transfer.",
+    "category": "Chemistry",
+    "example": "Bomb calorimetry allows us to measure the energy content of food."
+  },
+  {
+    "term": "Throughput",
+    "translation": "產能 / 吞吐量",
+    "definition": "The amount of material or items passing through a system or process.",
+    "category": "Chemical Engineering",
+    "example": "The new pump increased the plant's throughput by 20%."
+  },
+  {
+    "term": "Diffraction",
+    "translation": "繞射",
+    "definition": "The spreading of waves around obstacles.",
+    "category": "Materials Science",
+    "example": "X-ray diffraction (XRD) helps determine crystal structures."
+  },
+  {
+    "term": "Electroplating",
+    "translation": "電鍍",
+    "definition": "A process that uses an electric current to reduce dissolved metal cations so that they form a thin coherent metal coating on an electrode.",
+    "category": "Chemistry",
+    "example": "Jewelry is often subjected to electroplating with gold."
+  },
+  {
+    "term": "Membrane",
+    "translation": "膜",
+    "definition": "A selective barrier; it allows some things to pass through but stops others.",
+    "category": "Chemical Engineering",
+    "example": "Reverse osmosis uses a semi-permeable membrane to purify water."
+  },
+  {
+    "term": "Emulsion",
+    "translation": "乳液 / 乳狀液",
+    "definition": "A fine dispersion of minute droplets of one liquid in another in which it is not soluble or miscible.",
+    "category": "Chemistry",
+    "example": "Mayonnaise is an emulsion of oil in vinegar."
+  },
+  {
+    "term": "Rheology",
+    "translation": "流變學",
+    "definition": "The study of the flow of matter, primarily in a liquid state.",
+    "category": "Chemical Engineering",
+    "example": "Understanding rheology is key when processing paints and coatings."
+  },
+  {
+    "term": "Martensite",
+    "translation": "麻田散鐵",
+    "definition": "A very hard form of steel crystalline structure.",
+    "category": "Materials Science",
+    "example": "Rapid cooling of austenite forms martensite."
+  },
+  {
+    "term": "Friction Factor",
+    "translation": "摩擦係數",
+    "definition": "A dimensionless number used to calculate the pressure drop in a pipe due to friction.",
+    "category": "Chemical Engineering",
+    "example": "The Darcy friction factor is dependent on the pipe roughness."
+  },
+  {
+    "term": "Aqueous Solution",
+    "translation": "水溶液",
+    "definition": "A solution in which the solvent is water.",
+    "category": "Chemistry",
+    "example": "Sodium chloride dissolves easily to form an aqueous solution."
+  },
+  {
+    "term": "Metamaterial",
+    "translation": "超材料",
+    "definition": "A material engineered to have a property that is not found in naturally occurring materials.",
+    "category": "Materials Science",
+    "example": "Metamaterials can interact with light in unusual ways, creating invisibility cloaks."
+  },
+  {
+    "term": "Leaching",
+    "translation": "瀝濾 / 萃取",
+    "definition": "Extraction of certain materials from a carrier into a liquid.",
+    "category": "Chemical Engineering",
+    "example": "Leaching is used to extract gold from low-grade ore."
+  },
+  {
+    "term": "Galvanic Cell",
+    "translation": "賈凡尼電池",
+    "definition": "An electrochemical cell that derives electrical energy from spontaneous redox reactions.",
+    "category": "Chemistry",
+    "example": "A common AA battery is an example of a galvanic cell."
+  },
+  {
+    "term": "Permeability",
+    "translation": "滲透率",
+    "definition": "The ability of a material to transmit fluids.",
+    "category": "Materials Science",
+    "example": "Sand has high permeability compared to clay."
+  },
+  {
+    "term": "Impeller",
+    "translation": "葉輪",
+    "definition": "A rotating component of a centrifugal pump which transfers energy from the motor to the fluid.",
+    "category": "Chemical Engineering",
+    "example": "The impeller design determines the pump's efficiency."
+  }
+
+]
