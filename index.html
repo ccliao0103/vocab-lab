@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>²z¤u¾Ç¬ì­^»y½m²ß | ESP Practice</title>
+    <title>ç†å·¥å­¸ç§‘è‹±èªç·´ç¿’ | ESP Practice</title>
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -26,7 +26,7 @@
         }
         h1 { color: var(--primary-color); }
         
-        /* ±±¨î«ö¶s°Ï */
+        /* æ§åˆ¶æŒ‰éˆ•å€ */
         .controls {
             margin-bottom: 20px;
         }
@@ -44,7 +44,7 @@
         button:hover { background-color: var(--accent-color); }
         button.active { background-color: var(--accent-color); border: 2px solid #fff; }
 
-        /* ¥d¤ù³]­p */
+        /* å¡ç‰‡è¨­è¨ˆ */
         .card-container {
             perspective: 1000px;
             width: 300px;
@@ -78,7 +78,7 @@
             text-align: center;
         }
         
-        /* ¥¿­± (­^¤å) */
+        /* æ­£é¢ (è‹±æ–‡) */
         .card-front {
             background-color: white;
             color: var(--primary-color);
@@ -92,7 +92,7 @@
             color: #666;
         }
 
-        /* ­I­± (¤¤¤å + ¸ÑÄÀ) */
+        /* èƒŒé¢ (ä¸­æ–‡ + è§£é‡‹) */
         .card-back {
             background-color: var(--primary-color);
             color: white;
@@ -102,7 +102,7 @@
         .definition { font-size: 0.95rem; line-height: 1.4; margin-bottom: 15px; }
         .example { font-style: italic; font-size: 0.85rem; color: #ddd; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 10px;}
 
-        /* ¤U¤@­Ó«ö¶s */
+        /* ä¸‹ä¸€å€‹æŒ‰éˆ• */
         .next-btn {
             margin-top: 30px;
             background-color: var(--accent-color);
@@ -114,15 +114,15 @@
 <body>
 
     <header>
-        <h1>?? ²z¤u¾Ç¬ì­^»y³æ¦r¥d</h1>
-        <p>ÂIÀ»¥d¤ù¬d¬İ¸ÑÄÀ¡AÂIÀ»¤U¤è«ö¶s¤Á´«³æ¦r</p>
+        <h1>?? ç†å·¥å­¸ç§‘è‹±èªå–®å­—å¡</h1>
+        <p>é»æ“Šå¡ç‰‡æŸ¥çœ‹è§£é‡‹ï¼Œé»æ“Šä¸‹æ–¹æŒ‰éˆ•åˆ‡æ›å–®å­—</p>
     </header>
 
     <div class="controls" id="filter-controls">
-        <button class="filter-btn active" data-filter="all">¥ş³¡ (All)</button>
-        <button class="filter-btn" data-filter="Chemistry">¤Æ¾Ç</button>
-        <button class="filter-btn" data-filter="Chemical Engineering">¤Æ¤u</button>
-        <button class="filter-btn" data-filter="Materials Science">§÷®Æ</button>
+        <button class="filter-btn active" data-filter="all">å…¨éƒ¨ (All)</button>
+        <button class="filter-btn" data-filter="Chemistry">åŒ–å­¸</button>
+        <button class="filter-btn" data-filter="Chemical Engineering">åŒ–å·¥</button>
+        <button class="filter-btn" data-filter="Materials Science">ææ–™</button>
     </div>
 
     <div class="card-container" onclick="flipCard()">
@@ -130,49 +130,49 @@
             <div class="card-front">
                 <div class="term" id="term-text">Loading...</div>
                 <div class="category-tag" id="category-text">Subject</div>
-                <p style="margin-top:20px; font-size:0.8rem; color:#999;">(ÂIÀ»Â½­±)</p>
+                <p style="margin-top:20px; font-size:0.8rem; color:#999;">(é»æ“Šç¿»é¢)</p>
             </div>
             <div class="card-back">
-                <div class="translation" id="trans-text">¸ü¤J¤¤...</div>
+                <div class="translation" id="trans-text">è¼‰å…¥ä¸­...</div>
                 <div class="definition" id="def-text"></div>
                 <div class="example" id="ex-text"></div>
             </div>
         </div>
     </div>
 
-    <button class="next-btn" onclick="nextCard()">¤U¤@­Ó³æ¦r Next Word</button>
+    <button class="next-btn" onclick="nextCard()">ä¸‹ä¸€å€‹å–®å­— Next Word</button>
 
     <script>
         let allData = [];
         let currentData = [];
         let currentIndex = 0;
 
-        // 1. Åª¨ú JSON ¸ê®Æ
-        // ª`·N¡G¦pªG§A¬O¦b¥»¾÷´ú¸Õ¡A¥i¯à»İ­n¥Î Live Server¡A©ÎªÌ§â JSON ª½±µ¼g¦b JS ÅÜ¼Æ¸Ì¤]¥i¥H
+        // 1. è®€å– JSON è³‡æ–™
+        // æ³¨æ„ï¼šå¦‚æœä½ æ˜¯åœ¨æœ¬æ©Ÿæ¸¬è©¦ï¼Œå¯èƒ½éœ€è¦ç”¨ Live Serverï¼Œæˆ–è€…æŠŠ JSON ç›´æ¥å¯«åœ¨ JS è®Šæ•¸è£¡ä¹Ÿå¯ä»¥
         async function fetchData() {
             try {
                 const response = await fetch('data.json');
                 allData = await response.json();
-                currentData = allData; // ¹w³]Åã¥Ü¥ş³¡
-                nextCard(); // ªì©l¤ÆÅã¥Ü²Ä¤@±i
+                currentData = allData; // é è¨­é¡¯ç¤ºå…¨éƒ¨
+                nextCard(); // åˆå§‹åŒ–é¡¯ç¤ºç¬¬ä¸€å¼µ
             } catch (error) {
                 console.error('Error loading data:', error);
-                document.getElementById('term-text').innerText = "µLªkÅª¨ú¸ê®Æ";
-                document.getElementById('trans-text').innerText = "½Ğ½T»{ data.json ¦s¦b";
+                document.getElementById('term-text').innerText = "ç„¡æ³•è®€å–è³‡æ–™";
+                document.getElementById('trans-text').innerText = "è«‹ç¢ºèª data.json å­˜åœ¨";
             }
         }
 
-        // 2. Åã¥Ü³æ¦rÅŞ¿è
+        // 2. é¡¯ç¤ºå–®å­—é‚è¼¯
         function nextCard() {
-            // ­«¸mÂ½Âàª¬ºA
+            // é‡ç½®ç¿»è½‰ç‹€æ…‹
             const card = document.getElementById('flashcard');
             card.classList.remove('is-flipped');
 
-            // µy·L©µ¿ğ¤@ÂI¦A´«¦r¡AÅı¨Ï¥ÎªÌ¬İ¨ì¥d¤ùÂ½¦^¨Óªº°Êµe
+            // ç¨å¾®å»¶é²ä¸€é»å†æ›å­—ï¼Œè®“ä½¿ç”¨è€…çœ‹åˆ°å¡ç‰‡ç¿»å›ä¾†çš„å‹•ç•«
             setTimeout(() => {
                 if (currentData.length === 0) return;
                 
-                // ÀH¾÷¿ï¨ú¤@­Ó³æ¦r
+                // éš¨æ©Ÿé¸å–ä¸€å€‹å–®å­—
                 const randomIndex = Math.floor(Math.random() * currentData.length);
                 const item = currentData[randomIndex];
 
@@ -184,19 +184,19 @@
             }, 200);
         }
 
-        // 3. Â½µP¥\¯à
+        // 3. ç¿»ç‰ŒåŠŸèƒ½
         function flipCard() {
             document.getElementById('flashcard').classList.toggle('is-flipped');
         }
 
-        // 4. ¿z¿ï¥\¯à
+        // 4. ç¯©é¸åŠŸèƒ½
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
-                // UI §ó·s
+                // UI æ›´æ–°
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                 e.target.classList.add('active');
 
-                // ¸ê®Æ¿z¿ï
+                // è³‡æ–™ç¯©é¸
                 const filter = e.target.getAttribute('data-filter');
                 if (filter === 'all') {
                     currentData = allData;
@@ -204,11 +204,11 @@
                     currentData = allData.filter(item => item.category === filter);
                 }
                 
-                nextCard(); // ¿z¿ï«áª½±µ´«¤@±i
+                nextCard(); // ç¯©é¸å¾Œç›´æ¥æ›ä¸€å¼µ
             });
         });
 
-        // ±Ò°Êµ{¦¡
+        // å•Ÿå‹•ç¨‹å¼
         fetchData();
     </script>
 </body>
