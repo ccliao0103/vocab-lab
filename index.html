@@ -9,6 +9,8 @@
             --primary-color: #2c3e50;
             --accent-color: #3498db;
             --bg-color: #f4f6f7;
+            --card-bg: #ffffff;
+            --text-color: #333;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -43,8 +45,8 @@
             border-radius: 50px;
             cursor: pointer;
             font-size: 1rem;
-            transition: all 0.3s ease;
-            opacity: 0.7;
+            transition: 0.2s;
+            opacity: 0.8;
         }
         button:hover { opacity: 1; transform: translateY(-2px); }
         button.active { 
@@ -53,100 +55,120 @@
             box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3); 
         }
 
-        /* --- 核心修復區：卡片 3D 設定 --- */
+        /* --- 卡片設計 (無 3D) --- */
         .card-container {
-            perspective: 1000px; /* 3D 視角深度 */
-            width: 300px;
-            height: 400px;
-            cursor: pointer;
+            width: 100%;
+            max-width: 500px; /* 寬度稍微寬一點比較好讀 */
             margin-bottom: 30px;
         }
         
         .card {
-            width: 100%;
-            height: 100%;
-            position: relative; /* 父容器定位基準 */
-            transform-style: preserve-3d; /* 保留 3D 空間 */
-            transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1); /* 翻轉動畫曲線 */
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            background-color: var(--card-bg);
             border-radius: 20px;
-        }
-        
-        /* 翻轉觸發 */
-        .card.is-flipped {
-            transform: rotateY(180deg);
-        }
-        
-        /* --- 這裡修復了重疊問題 --- */
-        .card-face {
-            position: absolute; /* 關鍵：強制重疊 */
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden; /* 背對時隱藏 */
-            -webkit-backface-visibility: hidden; /* Safari 支援 */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 25px;
-            box-sizing: border-box;
-            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 40px;
             text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+            border: 1px solid #eee;
+            position: relative;
         }
-        
-        /* 正面樣式 */
-        .card-front {
-            background-color: white;
-            color: var(--primary-color);
-            z-index: 2; /* 確保正面預設在最上層 */
+
+        .card:active {
+            transform: scale(0.98); /* 點擊時稍微縮一下 */
         }
-        .term { font-size: 2.2rem; font-weight: 700; margin-bottom: 15px; color: #2c3e50; }
+
+        /* 題目區 (永遠顯示) */
+        .term-section {
+            margin-bottom: 20px;
+        }
+        .term { 
+            font-size: 2.5rem; 
+            font-weight: 800; 
+            color: var(--primary-color); 
+            margin-bottom: 15px; 
+            line-height: 1.2;
+        }
         .category-tag { 
-            background: #f0f2f5; 
+            display: inline-block;
+            background: #eef2f7; 
+            color: #7f8c8d;
             padding: 6px 14px; 
             border-radius: 20px; 
-            font-size: 0.85rem; 
-            color: #7f8c8d;
-            font-weight: 500;
+            font-size: 0.9rem; 
+            font-weight: 600;
         }
-        .hint { margin-top: auto; font-size: 0.8rem; color: #bdc3c7; }
 
-        /* 背面樣式 */
-        .card-back {
-            background-color: var(--primary-color);
-            color: white;
-            transform: rotateY(180deg); /* 預先轉 180 度 */
+        /* 提示文字 */
+        .tap-hint {
+            margin-top: 20px;
+            color: #bdc3c7;
+            font-size: 0.9rem;
+            animation: fadeIn 1s infinite alternate;
         }
-        .translation { font-size: 1.8rem; font-weight: bold; margin-bottom: 20px; color: #f1c40f;}
-        .definition { font-size: 1rem; line-height: 1.6; margin-bottom: 20px; font-weight: 300; }
+
+        /* 答案區 (預設隱藏) */
+        .answer-section {
+            display: none; /* 關鍵：一開始隱藏 */
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px dashed #eee;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        .translation { 
+            font-size: 1.8rem; 
+            font-weight: bold; 
+            color: var(--accent-color); 
+            margin-bottom: 15px;
+        }
+        .definition { 
+            font-size: 1.1rem; 
+            line-height: 1.6; 
+            color: #555; 
+            margin-bottom: 20px;
+            text-align: left; /* 英文解釋靠左對齊比較好讀 */
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 10px;
+        }
         .example { 
             font-style: italic; 
-            font-size: 0.9rem; 
-            color: #bdc3c7; 
-            border-top: 1px solid rgba(255,255,255,0.2); 
-            padding-top: 15px;
-            width: 100%;
+            font-size: 1rem; 
+            color: #888; 
+            text-align: left;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 15px;
+            margin-top: 10px;
         }
 
         /* 下一個按鈕 */
         .next-btn {
             background-color: var(--accent-color);
-            padding: 15px 50px;
-            font-size: 1.2rem;
+            padding: 15px 60px;
+            font-size: 1.3rem;
             font-weight: bold;
             opacity: 1;
             box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+            margin-top: 20px;
         }
-        .next-btn:active { transform: scale(0.98); }
+
+        /* 動畫特效 */
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0.4; }
+            to { opacity: 1; }
+        }
     </style>
 </head>
 <body>
 
     <header>
         <h1>VocabLab 理工學科英語</h1>
-        <p>點擊卡片查看解釋，點擊下方按鈕切換單字</p>
+        <p>點擊下方卡片顯示中文解釋</p>
     </header>
 
     <div class="controls">
@@ -156,18 +178,22 @@
         <button class="filter-btn" data-filter="Materials Science">材料</button>
     </div>
 
-    <div class="card-container" onclick="flipCard()">
-        <div class="card" id="flashcard">
-            <div class="card-face card-front">
+    <div class="card-container">
+        <div class="card" onclick="toggleAnswer()">
+            
+            <div class="term-section">
                 <div class="term" id="term-text">Loading...</div>
                 <div class="category-tag" id="category-text">Subject</div>
-                <div class="hint">(點擊翻面 Click to Flip)</div>
             </div>
-            <div class="card-face card-back">
-                <div class="translation" id="trans-text">載入中...</div>
-                <div class="definition" id="def-text"></div>
-                <div class="example" id="ex-text"></div>
+
+            <div class="tap-hint" id="hint-text">👆 點擊查看答案 (Click to Reveal)</div>
+
+            <div class="answer-section" id="answer-box">
+                <div class="translation" id="trans-text">中文翻譯</div>
+                <div class="definition" id="def-text">英文定義...</div>
+                <div class="example" id="ex-text">例句...</div>
             </div>
+
         </div>
     </div>
 
@@ -176,10 +202,10 @@
     <script>
         let allData = [];
         let currentData = [];
+        let isAnswerShown = false; // 紀錄目前是不是已經顯示答案
         
         async function fetchData() {
             try {
-                // 加個時間戳記，避免瀏覽器讀到舊的 data.json
                 const response = await fetch('data.json?' + new Date().getTime());
                 allData = await response.json();
                 currentData = allData;
@@ -187,35 +213,45 @@
             } catch (error) {
                 console.error('Error:', error);
                 document.getElementById('term-text').innerText = "讀取失敗";
-                document.getElementById('trans-text').innerText = "請檢查 data.json";
-                document.getElementById('def-text').innerText = "是否已存為 UTF-8 編碼？";
+                document.getElementById('hint-text').innerText = "請檢查 data.json 是否為 UTF-8";
             }
         }
 
         function nextCard() {
-            const card = document.getElementById('flashcard');
-            // 先翻回正面
-            card.classList.remove('is-flipped');
+            // 1. 先把答案區藏起來
+            document.getElementById('answer-box').style.display = 'none';
+            document.getElementById('hint-text').style.display = 'block';
+            isAnswerShown = false;
 
-            // 等待 300ms 翻轉動畫過一半再換字，體驗比較好
-            setTimeout(() => {
-                if (currentData.length === 0) return;
-                const randomIndex = Math.floor(Math.random() * currentData.length);
-                const item = currentData[randomIndex];
+            // 2. 隨機選字
+            if (currentData.length === 0) return;
+            const randomIndex = Math.floor(Math.random() * currentData.length);
+            const item = currentData[randomIndex];
 
-                document.getElementById('term-text').innerText = item.term;
-                document.getElementById('category-text').innerText = item.category;
-                document.getElementById('trans-text').innerText = item.translation;
-                document.getElementById('def-text').innerText = item.definition;
-                document.getElementById('ex-text').innerText = `"${item.example}"`;
-            }, 300);
+            // 3. 填入內容
+            document.getElementById('term-text').innerText = item.term;
+            document.getElementById('category-text').innerText = item.category;
+            
+            document.getElementById('trans-text').innerText = item.translation;
+            document.getElementById('def-text').innerText = item.definition;
+            document.getElementById('ex-text').innerText = `"${item.example}"`;
         }
 
-        function flipCard() {
-            document.getElementById('flashcard').classList.toggle('is-flipped');
+        function toggleAnswer() {
+            const answerBox = document.getElementById('answer-box');
+            const hintText = document.getElementById('hint-text');
+
+            // 如果答案還沒顯示，就顯示出來
+            if (!isAnswerShown) {
+                answerBox.style.display = 'block';
+                hintText.style.display = 'none'; // 隱藏提示文字
+                isAnswerShown = true;
+            }
+            // 如果已經顯示了，再次點擊可以選擇不動作，或者你要它收起來也可以
+            // 目前設計是點了就保持開啟，直到按 Next
         }
 
-        // 按鈕篩選功能
+        // 篩選功能
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -231,7 +267,6 @@
             });
         });
 
-        // 啟動程式
         fetchData();
     </script>
 </body>
