@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
@@ -37,7 +37,7 @@
             flex-wrap: wrap;
             justify-content: center;
         }
-        button {
+        button.filter-btn {
             background-color: var(--primary-color);
             color: white;
             border: none;
@@ -48,17 +48,17 @@
             transition: 0.2s;
             opacity: 0.8;
         }
-        button:hover { opacity: 1; transform: translateY(-2px); }
-        button.active { 
+        button.filter-btn:hover { opacity: 1; transform: translateY(-2px); }
+        button.filter-btn.active { 
             background-color: var(--accent-color); 
             opacity: 1; 
             box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3); 
         }
 
-        /* --- 卡片設計 (無 3D) --- */
+        /* --- 卡片設計 --- */
         .card-container {
             width: 100%;
-            max-width: 500px; /* 寬度稍微寬一點比較好讀 */
+            max-width: 500px;
             margin-bottom: 30px;
         }
         
@@ -75,20 +75,59 @@
         }
 
         .card:active {
-            transform: scale(0.98); /* 點擊時稍微縮一下 */
+            transform: scale(0.98);
         }
 
-        /* 題目區 (永遠顯示) */
+        /* 題目區 */
         .term-section {
             margin-bottom: 20px;
+            /* 讓單字跟喇叭排在一起 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
+        
+        /* 單字與喇叭的容器 */
+        .term-row {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* 單字跟喇叭的距離 */
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
         .term { 
             font-size: 2.5rem; 
             font-weight: 800; 
             color: var(--primary-color); 
-            margin-bottom: 15px; 
             line-height: 1.2;
         }
+
+        /* 發音按鈕樣式 */
+        .audio-btn {
+            background-color: #eef2f7;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
+            color: var(--primary-color);
+        }
+        .audio-btn:hover {
+            background-color: var(--accent-color);
+            color: white;
+            transform: scale(1.1);
+        }
+        .audio-btn:active {
+            transform: scale(0.9);
+        }
+
         .category-tag { 
             display: inline-block;
             background: #eef2f7; 
@@ -99,7 +138,6 @@
             font-weight: 600;
         }
 
-        /* 提示文字 */
         .tap-hint {
             margin-top: 20px;
             color: #bdc3c7;
@@ -107,9 +145,9 @@
             animation: fadeIn 1s infinite alternate;
         }
 
-        /* 答案區 (預設隱藏) */
+        /* 答案區 */
         .answer-section {
-            display: none; /* 關鍵：一開始隱藏 */
+            display: none;
             margin-top: 30px;
             padding-top: 30px;
             border-top: 2px dashed #eee;
@@ -127,7 +165,7 @@
             line-height: 1.6; 
             color: #555; 
             margin-bottom: 20px;
-            text-align: left; /* 英文解釋靠左對齊比較好讀 */
+            text-align: left;
             background: #f9f9f9;
             padding: 15px;
             border-radius: 10px;
@@ -142,18 +180,21 @@
             margin-top: 10px;
         }
 
-        /* 下一個按鈕 */
         .next-btn {
             background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
             padding: 15px 60px;
             font-size: 1.3rem;
             font-weight: bold;
             opacity: 1;
             box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
             margin-top: 20px;
+            cursor: pointer;
         }
+        .next-btn:hover { transform: translateY(-2px); }
 
-        /* 動畫特效 */
         @keyframes slideDown {
             from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -168,7 +209,7 @@
 
     <header>
         <h1>VocabLab 理工學科英語</h1>
-        <p>點擊下方卡片顯示中文解釋</p>
+        <p>點擊喇叭發音，點擊卡片顯示中文</p>
     </header>
 
     <div class="controls">
@@ -182,7 +223,11 @@
         <div class="card" onclick="toggleAnswer()">
             
             <div class="term-section">
-                <div class="term" id="term-text">Loading...</div>
+                <div class="term-row">
+                    <div class="term" id="term-text">Loading...</div>
+                    <button class="audio-btn" onclick="playAudio(event)" title="唸出單字">🔊</button>
+                </div>
+                
                 <div class="category-tag" id="category-text">Subject</div>
             </div>
 
@@ -202,7 +247,7 @@
     <script>
         let allData = [];
         let currentData = [];
-        let isAnswerShown = false; // 紀錄目前是不是已經顯示答案
+        let isAnswerShown = false;
         
         async function fetchData() {
             try {
@@ -213,22 +258,19 @@
             } catch (error) {
                 console.error('Error:', error);
                 document.getElementById('term-text').innerText = "讀取失敗";
-                document.getElementById('hint-text').innerText = "請檢查 data.json 是否為 UTF-8";
+                document.getElementById('hint-text').innerText = "請檢查 data.json";
             }
         }
 
         function nextCard() {
-            // 1. 先把答案區藏起來
             document.getElementById('answer-box').style.display = 'none';
             document.getElementById('hint-text').style.display = 'block';
             isAnswerShown = false;
 
-            // 2. 隨機選字
             if (currentData.length === 0) return;
             const randomIndex = Math.floor(Math.random() * currentData.length);
             const item = currentData[randomIndex];
 
-            // 3. 填入內容
             document.getElementById('term-text').innerText = item.term;
             document.getElementById('category-text').innerText = item.category;
             
@@ -238,20 +280,31 @@
         }
 
         function toggleAnswer() {
-            const answerBox = document.getElementById('answer-box');
-            const hintText = document.getElementById('hint-text');
-
-            // 如果答案還沒顯示，就顯示出來
             if (!isAnswerShown) {
-                answerBox.style.display = 'block';
-                hintText.style.display = 'none'; // 隱藏提示文字
+                document.getElementById('answer-box').style.display = 'block';
+                document.getElementById('hint-text').style.display = 'none';
                 isAnswerShown = true;
             }
-            // 如果已經顯示了，再次點擊可以選擇不動作，或者你要它收起來也可以
-            // 目前設計是點了就保持開啟，直到按 Next
         }
 
-        // 篩選功能
+        // --- 新增的發音功能 ---
+        function playAudio(event) {
+            // 阻止事件冒泡：這行很重要！它讓點擊喇叭時，不會誤觸「打開答案」的功能
+            event.stopPropagation(); 
+
+            // 抓取目前的英文單字
+            const textToSpeak = document.getElementById('term-text').innerText;
+            
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(textToSpeak);
+                utterance.lang = 'en-US'; // 設定為美式發音
+                utterance.rate = 0.9;     // 語速稍微慢一點點 (預設是 1)
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert("抱歉，你的瀏覽器不支援發音功能");
+            }
+        }
+
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
